@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="kn">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>U Search</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -17,227 +6,364 @@ box-sizing:border-box;
 }
 
 body{
-font-family:'Noto Sans Kannada',sans-serif;
-background:#f4f7fc;
-color:#1a1a1a;
-overflow-x:hidden;
+font-family:Arial,sans-serif;
+background:#f7faff;
 }
 
-.hero{
-padding:60px 20px;
+.usearch-hero{
+padding:70px 20px;
+background:
+linear-gradient(180deg,#f7fbff 0%,#eef5ff 100%);
+overflow:hidden;
+position:relative;
 }
 
-.container{
+.usearch-hero::before{
+content:"";
+position:absolute;
+top:-100px;
+right:-100px;
+width:350px;
+height:350px;
+background:rgba(30,95,255,.06);
+border-radius:50%;
+}
+
+.hero-container{
 max-width:1300px;
 margin:auto;
-display:grid;
-grid-template-columns:1.1fr 0.9fr;
+display:flex;
 align-items:center;
-gap:60px;
+justify-content:space-between;
+gap:70px;
 }
 
-.logo{
-width:320px;
-max-width:100%;
+.hero-left{
+flex:1;
+}
+
+.launch-badge{
+display:inline-block;
+background:#eaf2ff;
+color:#1f5cff;
+padding:10px 18px;
+border-radius:50px;
+font-size:14px;
+font-weight:700;
+margin-bottom:25px;
+border:1px solid rgba(31,92,255,.15);
+}
+
+.logo-wrap img{
+max-width:330px;
+width:100%;
 margin-bottom:20px;
 }
 
-.tagline{
-font-size:18px;
-color:#555;
+.hero-title{
+font-size:60px;
+line-height:1.2;
+font-weight:800;
+color:#08245c;
 margin-bottom:25px;
 }
 
-.hero h1{
-font-size:58px;
-line-height:1.2;
-font-weight:800;
-color:#0a2661;
+.hero-title span{
+color:#1f5cff;
+}
+
+.hero-desc{
+font-size:21px;
+line-height:1.8;
+color:#4d596a;
+max-width:700px;
+margin-bottom:35px;
+}
+
+.feature-points{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-bottom:35px;
+}
+
+.feature-points span{
+background:#fff;
+padding:12px 16px;
+border-radius:50px;
+font-size:15px;
+font-weight:600;
+box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 margin-bottom:30px;
 }
 
-.hero h1 span{
-color:#1f66ff;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
-margin-top:35px;
-}
-
-.feature{
-background:white;
-padding:24px;
-border-radius:24px;
-box-shadow:0 8px 25px rgba(0,0,0,.07);
-transition:.3s;
-}
-
-.feature:hover{
-transform:translateY(-4px);
-}
-
-.icon{
-font-size:38px;
-margin-bottom:12px;
-}
-
-.feature h3{
-font-size:20px;
-color:#0a2661;
-margin-bottom:8px;
-}
-
-.feature p{
-font-size:15px;
-color:#666;
-line-height:1.6;
-}
-
-.whatsapp-btn{
-display:inline-flex;
-align-items:center;
-gap:10px;
-margin-top:35px;
-padding:18px 34px;
+.btn-primary{
 background:#25D366;
-color:white;
-font-weight:700;
-text-decoration:none;
+color:#fff;
+padding:16px 30px;
 border-radius:14px;
-font-size:20px;
-box-shadow:0 10px 25px rgba(37,211,102,.3);
+text-decoration:none;
+font-weight:700;
+font-size:17px;
+display:inline-block;
 }
 
-.phone{
+.btn-primary:hover{
+transform:translateY(-2px);
+}
+
+.btn-secondary{
+background:#1f5cff;
+color:#fff;
+padding:16px 30px;
+border-radius:14px;
+text-decoration:none;
+font-weight:700;
+font-size:17px;
+display:inline-block;
+}
+
+.contact-box{
+display:flex;
+align-items:center;
+gap:15px;
+margin-top:10px;
+}
+
+.contact-box .phone{
+font-size:22px;
+font-weight:700;
+color:#08245c;
+}
+
+.contact-box .text{
+font-size:14px;
+color:#777;
+}
+
+.hero-right{
+flex:1;
 text-align:center;
+position:relative;
 }
 
-.phone img{
-max-width:100%;
-width:430px;
+.phone-frame{
+max-width:420px;
+width:100%;
+filter:drop-shadow(0 20px 40px rgba(0,0,0,.15));
+}
+
+.mockup-bg{
+position:absolute;
+width:420px;
+height:420px;
+background:rgba(31,92,255,.08);
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:-1;
+}
+
+.stats-row{
+margin-top:40px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.stat{
+background:#fff;
+padding:18px 25px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.stat strong{
+display:block;
+font-size:22px;
+color:#1f5cff;
+}
+
+.stat span{
+font-size:14px;
+color:#666;
 }
 
 @media(max-width:991px){
 
-.container{
-grid-template-columns:1fr;
+.hero-container{
+flex-direction:column;
 text-align:center;
 }
 
-.logo{
-margin:auto auto 20px;
-}
-
-.hero h1{
+.hero-title{
 font-size:42px;
 }
 
-.features{
-grid-template-columns:1fr 1fr;
-}
-
-}
-
-@media(max-width:600px){
-
-.hero{
-padding:40px 16px;
-}
-
-.hero h1{
-font-size:28px;
-}
-
-.tagline{
-font-size:15px;
-}
-
-.features{
-grid-template-columns:1fr;
-}
-
-.feature{
-padding:18px;
-}
-
-.whatsapp-btn{
-width:100%;
-justify-content:center;
+.hero-desc{
 font-size:18px;
+margin:auto auto 30px;
+}
+
+.feature-points{
+justify-content:center;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.contact-box{
+justify-content:center;
+}
+
+.logo-wrap img{
+max-width:260px;
+}
+
+.phone-frame{
+max-width:320px;
+}
+
+.mockup-bg{
+width:280px;
+height:280px;
+}
+
+.stats-row{
+justify-content:center;
 }
 
 }
 
+@media(max-width:576px){
+
+.usearch-hero{
+padding:50px 15px;
+}
+
+.hero-title{
+font-size:34px;
+}
+
+.hero-desc{
+font-size:16px;
+line-height:1.7;
+}
+
+.btn-primary,
+.btn-secondary{
+width:100%;
+text-align:center;
+}
+
+.feature-points span{
+width:100%;
+}
+
+.contact-box{
+flex-direction:column;
+gap:5px;
+}
+
+}
 </style>
-</head>
 
-<body>
+<section class="usearch-hero">
 
-<section class="hero">
+<div class="hero-container">
 
-<div class="container">
+<div class="hero-left">
 
-<div>
-
-<img src="YOUR-LOGO-URL" class="logo">
-
-<div class="tagline">
-ಮಡುಕರ ಹಾಗೂ ಸುತ್ತಮುತ್ತಲಿನ ಮಾಹಿತಿಯನ್ನು ಹುಡುಕುವ ಸುಲಭ ವೇದಿಕೆ
+<div class="launch-badge">
+🚀 ಶೀಘ್ರದಲ್ಲೇ ಆರಂಭವಾಗುತ್ತಿದೆ
 </div>
 
-<h1>
-ಮಡುಕರವನ್ನು ಸುಲಭವಾಗಿ<br>
-ಹುಡುಕಲು ನೆರವಾಗುವ<br>
-ಜನರಿಗಾಗಿ ನಿರ್ಮಿತವಾದ<br>
+<div class="logo-wrap">
+<img src="https://raw.githubusercontent.com/Rohanx12/USearch/main/usearch-logo.png" alt="U Search">
+</div>
+
+<h1 class="hero-title">
+ಮಡುಕರ ಹಾಗೂ ಸುತ್ತಮುತ್ತಲಿನ<br>
+ಮಾಹಿತಿಗಾಗಿ ನಿರ್ಮಿತವಾದ<br>
 <span>ಯು. ಸರ್ಚ್</span>
 </h1>
 
-<div class="features">
+<p class="hero-desc">
+ವ್ಯಾಪಾರ, ಆರೋಗ್ಯ, ಶಿಕ್ಷಣ, ಧಾರ್ಮಿಕ ಕೇಂದ್ರಗಳು,
+ಕಾರ್ಯಕ್ರಮಗಳು, ಉದ್ಯೋಗ ಮಾಹಿತಿ ಹಾಗೂ ಸ್ಥಳೀಯ
+ಮಾಹಿತಿಗಾಗಿ ಒಂದೇ ವೇದಿಕೆ.
+</p>
 
-<div class="feature">
-<div class="icon">🎯</div>
-<h3>ನಿಖರ ಮಾಹಿತಿ</h3>
-<p>ವಿಶ್ವಾಸಾರ್ಹ ಸ್ಥಳೀಯ ಮಾಹಿತಿ</p>
+<div class="feature-points">
+<span>✔ ಉಚಿತ ಬಳಕೆ</span>
+<span>✔ ಸ್ಥಳೀಯ ಮಾಹಿತಿ</span>
+<span>✔ ವೇಗದ ಹುಡುಕಾಟ</span>
+<span>✔ ಮೊಬೈಲ್ ಸ್ನೇಹಿ</span>
 </div>
 
-<div class="feature">
-<div class="icon">⚡</div>
-<h3>ವೇಗದ ಹುಡುಕಾಟ</h3>
-<p>ತ್ವರಿತ ಮಾಹಿತಿ ಲಭ್ಯ</p>
-</div>
+<div class="hero-buttons">
 
-<div class="feature">
-<div class="icon">📍</div>
-<h3>ಸ್ಥಳ ಆಧಾರಿತ</h3>
-<p>ನಿಮ್ಮ ಸುತ್ತಮುತ್ತ ಮಾಹಿತಿ</p>
-</div>
+<a href="https://whatsapp.com/channel/0029Vb8RlOR4o7qPzx2AR70D"
+class="btn-primary">
+📢 WhatsApp Channel ಸೇರಿ
+</a>
 
-<div class="feature">
-<div class="icon">📱</div>
-<h3>ಮೊಬೈಲ್ ಸ್ನೇಹಿ</h3>
-<p>ಎಲ್ಲ ಸಾಧನಗಳಲ್ಲಿ ಬಳಕೆ</p>
-</div>
-
-</div>
-
-<a href="WHATSAPP_CHANNEL_LINK" class="whatsapp-btn">
-WhatsApp ಚಾನೆಲ್ ಸೇರಿ
+<a href="https://wa.me/919972140766"
+class="btn-secondary">
+💡 ಸಲಹೆ ಕಳುಹಿಸಿ
 </a>
 
 </div>
 
-<div class="phone">
+<div class="contact-box">
 
-<img src="YOUR-MOBILE-MOCKUP-URL">
+<div>
+<div class="text">ಸಂಪರ್ಕಿಸಿ</div>
+<div class="phone">+91 99721 40766</div>
+</div>
+
+</div>
+
+<div class="stats-row">
+
+<div class="stat">
+<strong>25+</strong>
+<span>ವಿಭಾಗಗಳು</span>
+</div>
+
+<div class="stat">
+<strong>100+</strong>
+<span>ವ್ಯವಹಾರಗಳು ಸೇರಲಾಗುತ್ತಿದೆ</span>
+</div>
+
+<div class="stat">
+<strong>2025</strong>
+<span>ಶೀಘ್ರದಲ್ಲೇ ಬಿಡುಗಡೆ</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="mockup-bg"></div>
+
+<img
+src="YOUR_PHONE_MOCKUP_URL"
+alt="U Search App"
+class="phone-frame">
 
 </div>
 
 </div>
 
 </section>
-
-</body>
-</html>
